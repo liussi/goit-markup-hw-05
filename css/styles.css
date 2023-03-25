@@ -133,8 +133,9 @@ font-size: var(--font-size);
     color: var(--link-focus);
 }
 
+
 /* 
-.menu-link:hover::after {
+.menu-link::after {
     content:'' ;
     display: block;
     width: 67px;
@@ -145,7 +146,8 @@ font-size: var(--font-size);
      margin: 0 auto;
         
 }
-.menu-link-item:hover::after {
+
+.menu-link-item:visited::after {
     content: '';
     display: block;
     width: 48px;
@@ -447,20 +449,62 @@ font-size: var(--font-size);
     z-index: 100;
     width: 100%;
     height: 100%;
-    background: rgba(46, 47, 66, 0.4);
+    background: rgba(46, 47, 66, 0.4); 
     
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;   
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.9);
 }
 
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform:translate(-50%, -50%);
     width: 408px;
     height: 576px;
     background: #FCFCFC;
-
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    fill: #2E2F42;
+    background: #E7E9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+     }
+
+     .modal-close-btn:hover,
+    .modal-close-btn:focus {
+        background-color: #404BBF;
+     }
+    .clouse-btn-icon {
+        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+     .modal-close-btn:hover .clouse-btn-icon,
+     .modal-close-btn:focus .clouse-btn-icon {
+        fill: #FFFFFF;
+     }
 /* ===================section-portfolio================= */
 .section-portfolio {
     padding-top: 96px;
