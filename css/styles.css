@@ -392,10 +392,11 @@ font-size: var(--font-size);
     border: 1px solid #8E8F99;
     border-radius: 4px;  
     color: #404BBF;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.customers-icon{
+.customers-icon {
      fill:#8E8F99;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-item:hover,
