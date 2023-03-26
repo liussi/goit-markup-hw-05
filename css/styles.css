@@ -132,6 +132,9 @@ font-size: var(--font-size);
 .menu-link:focus {
     color: var(--link-focus);
 }
+.menu-link-item-nav{
+    position: relative;
+}
 
 .menu-link-item-nav::after {
     content:'';
@@ -141,9 +144,14 @@ font-size: var(--font-size);
      background: var(--link-focus);
      border-radius: 2px;
      
-     
+     position: absolute;
+     left: 0;
+     bottom: -28px;
 }
 
+.menu-link-item {
+    position: relative;
+}
 .menu-link-item::after {
     content: '';
     display: block;
@@ -152,6 +160,9 @@ font-size: var(--font-size);
     background: var(--link-focus);
     border-radius: 2px;
 
+    position: absolute;
+    left: 0;
+    bottom: -28px;
 }
 
 .menu {
@@ -508,7 +519,18 @@ font-size: var(--font-size);
     padding-left: 0;
     padding-right: 0;
 }
-
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
 .modal-btn {
     color: var(--accent-color);
     background-color: var(--theme-light);
